@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Бабл-ти & Кино — где магия большого экрана встречается с культурой Азии. Афиша, меню бабл-ти, авторские напитки.">
+  <title>Между Кадрами — Бабл-ти & Кино</title>
+  <link rel="icon" type="image/svg+xml" href="images/icon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="variables.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Главная навигация">
+      <a class="logo" href="#" aria-label="Между Кадрами — на главную">
+        <picture>
+          <source srcset="images/logoDark.svg" media="(prefers-color-scheme: dark)">
+          <img class="logo__img" src="images/logo.svg" alt="Между Кадрами">
+        </picture>
+      </a>
+
+      <button class="burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="site-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="nav__panel" id="site-menu">
+        <ul class="nav__list">
+          <li><a href="#afisha" class="nav__link">Афиша</a></li>
+          <li><a href="#menu" class="nav__link">Меню</a></li>
+          <li><a href="#about" class="nav__link">О нас</a></li>
+          <li><a href="#contacts" class="nav__link">Контакты</a></li>
+        </ul>
+
+        <div class="nav__actions">
+          <button class="btn btn--icon theme-toggle" type="button" aria-label="Переключить тему" aria-pressed="false">
+            <img src="images/theme.svg" alt="" aria-hidden="true">
+          </button>
+          <a href="#login" class="btn btn--primary">войти</a>
+        </div>
+      </div>
+
+      <div class="header-decor" aria-hidden="true">
+        <img class="header-decor__img header-decor__img--light" src="images/dotsLight.png" alt="">
+        <img class="header-decor__img header-decor__img--dark" src="images/dotsDark.png" alt="">
+      </div>
+    </nav>
+  </header>
+  <main>
+
+
+
+
+
+
+
+  
+    <section class="hero">
+      <div class="hero__inner container">
+        <div class="hero__content">
+          <h1 class="hero__title" id="hero-title">
+            <span>МЕЖДУ</span>
+            <span class="accent">КАДРАМИ</span>
+          </h1>
+          <p class="hero__lead">
+            Где магия большого экрана встречается с культурой Азии.
+            Место, где каждый кадр имеет вкус.
+          </p>
+          <div class="hero__cta">
+            <a href="#afisha" class="btn btn--primary">Афиша</a>
+            <a href="#menu" class="btn btn--outline">Меню</a>
+          </div>
+        </div>
+        <div class="hero__media">
+          <img src="images/heroBG.png" alt="">
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+
+
+  
+    <section class="section promo" id="promo">
+      <div class="container">
+        <div class="promo__inner">
+          <div class="promo__media">
+            <img src="images/promo.png" alt="Специальная акция">
+          </div>
+          <div class="promo__content">
+            <p class="promo__eyebrow">Особые предложения</p>
+            <h2 class="promo__title" id="promo-title">Бабл-ти + кино</h2>
+            <p class="promo__text">
+              Любой напиток из тематического меню фильма в подарок при покупке билета на закрытый сеанс.
+              Каждый пятый десерт бесплатно.
+            </p>
+            <a href="#menu" class="btn btn--primary">Выбрать напиток</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+
+
+  
+    <section class="section schedule" id="afisha">
+      <div class="container">
+        <header class="section__header">
+          <p class="section__eyebrow">Сегодня смотрим</p>
+          <h2 class="section__title" id="schedule-title">Расписание</h2>
+        </header>
+
+        <div class="slider">
+          <button class="slider__btn slider__btn--prev" type="button" aria-label="Предыдущий фильм">
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+              <path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+
+          <div class="slider__track schedule__grid">
+
+            <article class="movie-card">
+              <div class="movie-card__poster">
+                <img src="images/movie1.png" alt="">
+                <span class="movie-card__rating">16+</span>
+              </div>
+              <h3 class="movie-card__title">Магическая битва</h3>
+              <ul class="movie-card__times" aria-label="Сеансы">
+                <li><span class="time-chip">14:20</span></li>
+                <li><span class="time-chip time-chip--active">18:50</span></li>
+              </ul>
+              <ul class="movie-card__drinks" aria-label="Напитки к фильму">
+                <li class="drink-chip"><img src="images/1.png" alt="" aria-hidden="true"></li>
+                <li class="drink-chip"><img src="images/2.png" alt="" aria-hidden="true"></li>
+              </ul>
+            </article>
+
+            <article class="movie-card">
+              <div class="movie-card__poster">
+                <img src="images/movie2.png" alt="">
+                <span class="movie-card__rating">12+</span>
+              </div>
+              <h3 class="movie-card__title">Человек паук: через вселенные</h3>
+              <ul class="movie-card__times" aria-label="Сеансы">
+                <li><span class="time-chip">16:30</span></li>
+                <li><span class="time-chip">20:45</span></li>
+              </ul>
+              <ul class="movie-card__drinks" aria-label="Напитки к фильму">
+                <li class="drink-chip"><img src="images/3.png" alt="" aria-hidden="true"></li>
+                <li class="drink-chip"><img src="images/4.png" alt="" aria-hidden="true"></li>
+              </ul>
+            </article>
+
+            <article class="movie-card">
+              <div class="movie-card__poster">
+                <img src="images/movie3.png" alt="">
+                <span class="movie-card__rating">16+</span>
+              </div>
+              <h3 class="movie-card__title">Дьявол носит Prada</h3>
+              <ul class="movie-card__times" aria-label="Сеансы">
+                <li><span class="time-chip">15:00</span></li>
+                <li><span class="time-chip">23:00</span></li>
+              </ul>
+              <ul class="movie-card__drinks" aria-label="Напитки к фильму">
+                <li class="drink-chip"><img src="images/5.png" alt="" aria-hidden="true"></li>
+                <li class="drink-chip"><img src="images/6.png" alt="" aria-hidden="true"></li>
+              </ul>
+            </article>
+
+            <article class="movie-card">
+              <div class="movie-card__poster">
+                <img src="images/movie4.png" alt="">
+                <span class="movie-card__rating">6+</span>
+              </div>
+              <h3 class="movie-card__title">Ходячий замок</h3>
+              <ul class="movie-card__times" aria-label="Сеансы">
+                <li><span class="time-chip">17:20</span></li>
+                <li><span class="time-chip">21:00</span></li>
+              </ul>
+              <ul class="movie-card__drinks" aria-label="Напитки к фильму">
+                <li class="drink-chip"><img src="images/7.png" alt="" aria-hidden="true"></li>
+                <li class="drink-chip"><img src="images/8.png" alt="" aria-hidden="true"></li>
+              </ul>
+            </article>
+
+          </div>
+
+          <button class="slider__btn slider__btn--next" type="button" aria-label="Следующий фильм">
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+              <path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+
+        <div class="slider__dots" role="tablist" aria-label="Слайды афиши"></div>
+      </div>
+    </section>
+
+
+
+
+
+
+
+  
+    <section class="section menu" id="menu">
+      <div class="container">
+        <header class="section__header">
+          <p class="section__eyebrow">Популярные вкусы</p>
+          <h2 class="section__title" id="menu-title">Меню Бабл-ти</h2>
+        </header>
+
+        <ul class="menu__grid">
+          <li class="menu-card">
+            <img class="menu-card__img" src="images/menu1.png" alt="Классический Таро">
+            <div class="menu-card__body">
+              <div class="menu-card__row">
+                <h3 class="menu-card__title">Классический Таро</h3>
+                <span class="menu-card__price">350₽</span>
+              </div>
+              <p class="menu-card__desc">Сливочный вкус с фиолетовыми шариками тапиоки</p>
+            </div>
+          </li>
+
+          <li class="menu-card">
+            <img class="menu-card__img" src="images/menu2.png" alt="Матча Латте">
+            <div class="menu-card__body">
+              <div class="menu-card__row">
+                <h3 class="menu-card__title">Матча Латте</h3>
+                <span class="menu-card__price">320₽</span>
+              </div>
+              <p class="menu-card__desc">Церемониальная матча с овсяным молоком и тапиокой</p>
+            </div>
+          </li>
+
+          <li class="menu-card">
+            <img class="menu-card__img" src="images/menu3.png" alt="Анчан-Лимонад">
+            <div class="menu-card__body">
+              <div class="menu-card__row">
+                <h3 class="menu-card__title">Анчан-Лимонад</h3>
+                <span class="menu-card__price">280₽</span>
+              </div>
+              <p class="menu-card__desc">Голубой чай с лаймом и лавандовым сиропом</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+
+
+
+
+
+
+  
+<section class="section about" id="about" aria-labelledby="about-title">
+  <div class="container about__grid">
+    <div class="about__text">
+      <div class="about__card">
+        <h2 class="about__title" id="about-title">Кино с характером!</h2>
+        <p class="about__lead">
+          «Между Кадрами» — это небольшое уютное кафе, где подают бабл-ти, авторские лимонады
+          и десерты. Наше меню вдохновлено различными фильмами, оно совмещает
+           хорошее кино и вкусные напитки, которые не отвлекают от экрана, а дополняют его.
+        </p>
+        <p class="about__lead">
+          У нас один зал на 30 мест, поэтому сеансы проходят тихо и по-домашнему. В меню — напитки,
+          подобранные под настроение фильма: к аниме мы предлагаем матчу и таро, к вечерним показам —
+          лимонады и кофе. Каждый напиток готовим на месте, специально для Вас.
+        </p>
+        <p class="about__lead">
+          Помимо обычных сеансов, у нас можно арендовать зал для киновечера с друзьями: мы поможем
+          с выбором фильма, подготовим напитки и оставим вас наедине с экраном. Также по выходным
+          проводим открытые показы с обсуждением — расписание публикуем в афише.
+        </p>
+      </div>
+      <p class="about__note">
+        Мы верим, что кино — это не только картинка, но и атмосфера. Поэтому следим за звуком,
+        светом и тем, что стоит на столике рядом с вами. «Между Кадрами» — место, куда приходят
+        за фильмом, а остаются из-за вкуса.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+  <footer class="site-footer" id="contacts">
+    <div class="container">
+      <div class="footer__grid">
+
+        <div class="footer__brand">
+          <a class="logo" href="#" aria-label="Между Кадрами — на главную">
+            <picture>
+              <img class="logo__img" src="images/logo.svg" alt="Между Кадрами">
+            </picture>
+          </a>
+        </div>
+
+        <nav class="footer__col" aria-labelledby="footer-cinema">
+          <h3 class="footer__heading" id="footer-cinema">Кинотеатр</h3>
+          <ul class="footer__list">
+            <li><a href="#afisha">Афиша</a></li>
+            <li><a href="#">Билеты</a></li>
+          </ul>
+        </nav>
+
+        <address class="footer__col">
+          <h3 class="footer__heading">Контакты</h3>
+          <ul class="footer__list footer__list--contacts">
+            <li>
+              <img src="images/vector-476.svg" alt="" aria-hidden="true">
+              <span>Н.Новгород, Минина 12</span>
+            </li>
+            <li>
+              <a href="tel:+74950000000">+7 (495) 000-00-00</a>
+            </li>
+          </ul>
+        </address>
+
+        <div class="footer__col">
+          <h3 class="footer__heading">Режим</h3>
+          <dl class="footer__hours">
+            <dt>Ежедневно</dt>
+            <dd>10:00 — 23:00</dd>
+          </dl>
+        </div>
+
+      </div>
+
+      <div class="footer__bottom">
+        <p>© 2026 Между Кадрами</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="theme.js"></script>
+</body>
+</html>
