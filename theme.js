@@ -1,5 +1,5 @@
 (() => {
-  /*ТЕМА*/
+  /* ---------- ТЕМА ---------- */
   const root = document.documentElement;
   const themeBtn = document.querySelector('.theme-toggle');
 
@@ -22,7 +22,7 @@
     }
   }
 
-  /*БУРГЕР-МЕНЮ*/
+  /* ---------- БУРГЕР-МЕНЮ ---------- */
   const burger = document.querySelector('.burger');
   const panel = document.querySelector('.nav__panel');
 
@@ -50,7 +50,7 @@
     }
   }
 
-  /*СЛАЙДЕР АФИШИ*/
+  /* ---------- СЛАЙДЕР АФИШИ ---------- */
   const slider = document.querySelector('.slider');
   if (!slider) return;
 
@@ -62,46 +62,58 @@
 
   let currentIndex = 0;
 
+  function getGap() {
+    const raw = getComputedStyle(track).gap;
+    const parsed = parseFloat(raw);
+    return Number.isFinite(parsed) ? parsed : 0;
+  }
+
   function getStep() {
     if (slides.length < 2) return 0;
-    const gap = parseFloat(getComputedStyle(track).gap) || 0;
-    return slides[0].getBoundingClientRect().width + gap;
+    return slides[0].getBoundingClientRect().width + getGap();
   }
 
   function getVisibleCount() {
+    if (!slides.length) return 0;
     const step = getStep();
     if (!step) return slides.length;
-    return Math.max(1, Math.round(track.clientWidth / step));
+    const trackWidth = track.getBoundingClientRect().width;
+    const gap = getGap();
+    // Округляем, а не floor: карточки рассчитаны так, чтобы целиком влезать.
+    return Math.max(1, Math.round((trackWidth + gap) / step));
   }
 
   function getMaxIndex() {
     return Math.max(0, slides.length - getVisibleCount());
   }
 
+  function renderDots() {
+    if (!dotsContainer) return;
+    dotsContainer.innerHTML = '';
+    const total = getMaxIndex() + 1;
+    if (total <= 1) return;
+    for (let i = 0; i < total; i++) {
+      const dot = document.createElement('button');
+      dot.type = 'button';
+      dot.className = 'slider__dot';
+      dot.setAttribute('aria-label', `Слайд ${i + 1}`);
+      if (i === currentIndex) dot.classList.add('is-active');
+      dot.addEventListener('click', () => {
+        currentIndex = i;
+        update();
+      });
+      dotsContainer.appendChild(dot);
+    }
+  }
+
   function update() {
     const step = getStep();
     track.style.transform = `translateX(${-currentIndex * step}px)`;
 
-    prevBtn.disabled = currentIndex <= 0;
-    nextBtn.disabled = currentIndex >= getMaxIndex();
+    if (prevBtn) prevBtn.disabled = currentIndex <= 0;
+    if (nextBtn) nextBtn.disabled = currentIndex >= getMaxIndex();
 
-    if (dotsContainer) {
-      dotsContainer.innerHTML = '';
-      const max = getMaxIndex() + 1;
-      if (max <= 1) return;
-      for (let i = 0; i < max; i++) {
-        const dot = document.createElement('button');
-        dot.type = 'button';
-        dot.className = 'slider__dot';
-        dot.setAttribute('aria-label', `Слайд ${i + 1}`);
-        if (i === currentIndex) dot.classList.add('is-active');
-        dot.addEventListener('click', () => {
-          currentIndex = i;
-          update();
-        });
-        dotsContainer.appendChild(dot);
-      }
-    }
+    renderDots();
   }
 
   function next() {
@@ -117,9 +129,14 @@
   nextBtn?.addEventListener('click', next);
   prevBtn?.addEventListener('click', prev);
 
+  let resizeTimer = null;
   window.addEventListener('resize', () => {
-    currentIndex = Math.min(currentIndex, getMaxIndex());
-    update();
+    if (resizeTimer) clearTimeout(resizeTimer);
+    track.style.transform = 'translateX(0)';
+    resizeTimer = setTimeout(() => {
+      currentIndex = Math.min(currentIndex, getMaxIndex());
+      update();
+    }, 120);
   });
 
   update();

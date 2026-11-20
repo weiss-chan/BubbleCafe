@@ -470,7 +470,12 @@ button {
   padding-bottom: calc(var(--section-y) / 2);
 }
 
-.slider { position: relative; }
+.slider {
+  position: relative;
+  overflow: hidden;          /* главное: обрезает всё, что выходит за пределы */
+  padding-block: 16px;       /* чтобы hover-тень и сдвиг -3px не обрезались */
+  padding-inline: 8px;
+}
 
 .slider__track {
   display: flex;
