@@ -1,5 +1,5 @@
 (() => {
-  /* ---------- ТЕМА ---------- */
+  /*ТЕМА*/
   const root = document.documentElement;
   const themeBtn = document.querySelector('.theme-toggle');
 
@@ -22,7 +22,7 @@
     }
   }
 
-  /* ---------- БУРГЕР-МЕНЮ ---------- */
+  /*БУРГЕР-МЕНЮ*/
   const burger = document.querySelector('.burger');
   const panel = document.querySelector('.nav__panel');
 
@@ -50,7 +50,7 @@
     }
   }
 
-  /* ---------- СЛАЙДЕР АФИШИ ---------- */
+  /*СЛАЙДЕР АФИШИ*/
   const slider = document.querySelector('.slider');
   if (!slider) return;
 
@@ -79,7 +79,6 @@
     if (!step) return slides.length;
     const trackWidth = track.getBoundingClientRect().width;
     const gap = getGap();
-    // Округляем, а не floor: карточки рассчитаны так, чтобы целиком влезать.
     return Math.max(1, Math.round((trackWidth + gap) / step));
   }
 

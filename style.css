@@ -476,8 +476,8 @@ button {
 
 .slider {
   position: relative;
-  overflow: hidden;          /* главное: обрезает всё, что выходит за пределы */
-  padding-block: 16px;       /* чтобы hover-тень и сдвиг -3px не обрезались */
+  overflow: hidden;       
+  padding-block: 16px; 
   padding-inline: 8px;
 }
 
@@ -583,7 +583,7 @@ button {
   overflow: hidden;
 }
 
-[data-theme="dark"] .drink-chip { background: #000; }
+[data-theme="dark"] .drink-chip { background: var(--color-bg); }
 
 .drink-chip img {
   width: 100%;
